@@ -5,7 +5,7 @@ const ExerciseMain = () => {
 
   return (
     <div>
-      <h1>Exercise Section</h1>;
+      <h2>Exercise Section</h2>;
     </div>
   )
 }

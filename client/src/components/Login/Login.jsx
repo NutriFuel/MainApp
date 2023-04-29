@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-const nutrition = () => {
+const Login = () => {
 
   return (
     <div>
-      <h1>Nutrition Section</h1>;
+      <h2>Login Section</h2>;
     </div>
   )
 }
 
-export default nutrition;
+export default Login;

@@ -4,7 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll",
+    "loginTest": "jest ./client/src/components/Login/Login.test.js",
+    "exerciseTest": "jest ./client/src/components/Exercise/Exercise.test.js",
+    "nutritionTest": "jest ./client/src/components/Nutrition/Nutrition.test.js",
+    "profileTest": "jest ./client/src/components/Profile/Profile.test.js",
     "webpack": "webpack --mode development --watch",
     "server": "npx nodemon --watch server server/server.js"
   },
