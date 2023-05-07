@@ -51,6 +51,10 @@ const AddNutrition = () => {
     setTotalCalories(qty * calories);
   }, [qty, calories]);
 
+  function NavToDashboard () {
+
+  };
+
   return (
     <div>
       <input type="text" placeholder="Please enter the food" value={foodSearchName} onChange={(e) => { setFoodSearchName(e.target.value) }} />
@@ -61,7 +65,7 @@ const AddNutrition = () => {
       <div>Qty: <input type="text" value={qty} onChange={(e) => { setQty(e.target.value) }} /></div>
       <div>Total Calories: {totalCalories}</div>
       <button onClick={addFood}>Add Food</button>
-      <button>Home</button>
+      <button onClick={NavToDashboard}>Home</button>
       <button>Nutrition Record</button>
     </div>
   )
