@@ -34,6 +34,7 @@ const Progress = (props) => {
   const [endDate, setEndDate] = useState(new Date(date));
   const [xDates, setXDates] = useState([]);
   const [yCalories, setYCalories] = useState([]);
+  const [caloriesBurned, setCaloriesBurned] = useState(0);
 
   useEffect(() => {
     axios.get('/ProgressNutrition', { params: { user_id: userId, startDate: startDate, endDate: endDate } })
@@ -42,7 +43,26 @@ const Progress = (props) => {
         setYCalories(data.data[1]);
       })
       .catch((err) => {
-        console.log('Err', err);
+        console.log('progressNutrition useEffect err', err);
+      })
+  }, [startDate, endDate]);
+
+  useEffect(() => {
+    axios.get('/caloriesBurned', { params: { user_id: userId, startDate: startDate, endDate: endDate } })
+      .then((data) => {
+        console.log('caloriesburned useEFFECT', data.data)
+        var calories = [];
+        data.data.map(entry => {
+          var date = entry.date.slice(0, 10);
+          var caloriesBurned = Number(entry.sum);
+          var newObj = {};
+          newObj[date] = caloriesBurned;
+          calories.push(newObj)
+        })
+        setCaloriesBurned(calories)
+      })
+      .catch((err) => {
+        console.log('caloriesburned useEffectErr', err);
       })
   }, [startDate, endDate]);
 

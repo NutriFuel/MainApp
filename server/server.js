@@ -106,6 +106,18 @@ app.post('/logExercise', async (req, res) => {
       res.status(201).send('Add the exercise successfully!');
     }
   })
+});
+
+app.get('/caloriesBurned', async (req, res) => {
+  //console.log('calories burned query', req.query)
+  var startDate = req.query.startDate.slice(0, 10);
+  var endDate = req.query.endDate.slice(0, 10);
+  //console.log(startDate, endDate)
+  db.getCaloriesBurned(req.query.user_id, startDate, endDate)
+  .then(data => {
+    //console.log('calories burned get data', data)
+    res.status(200).send(data)
+  })
 })
 
 /* ------------------Nutrition------------------*/

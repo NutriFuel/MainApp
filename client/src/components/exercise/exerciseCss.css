@@ -9,6 +9,10 @@ button {
   font-size: 16px;
 }
 
+body {
+  background-color: #1D263B;
+}
+
 div {
   background-color: #1D263B;
   color: #A0EADE;

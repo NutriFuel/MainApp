@@ -21,13 +21,6 @@ const ExerciseMain = (userInfo) => {
       })
   }, []);
 
-  const navigate = useNavigate();
-
-  function goToAddExercisePage() {
-    navigate('/addExercise');
-    // ReactDOM.render(<AddExercise />, document.getElementById('app'));
-  };
-
   return (
     <div>
       <h1>Exercise Log</h1>
