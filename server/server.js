@@ -118,7 +118,18 @@ app.get('/caloriesBurned', async (req, res) => {
     //console.log('calories burned get data', data)
     res.status(200).send(data)
   })
-})
+});
+
+app.put('/deleteExercise', async (req, res) => {
+  var user_id = req.body.params.user_id;
+  var exercise_id = req.body.params.exercise_id;
+  console.log(user_id, exercise_id)
+  db.deleteExercise(user_id, exercise_id)
+  .then(data => {
+    console.log(data)
+    res.send()
+  })
+});
 
 /* ------------------Nutrition------------------*/
 app.get('/Nutrition', async (req, res) => {

@@ -50,7 +50,7 @@ const Progress = (props) => {
   useEffect(() => {
     axios.get('/caloriesBurned', { params: { user_id: userId, startDate: startDate, endDate: endDate } })
       .then((data) => {
-        console.log('caloriesburned useEFFECT', data.data)
+        //console.log('caloriesburned useEFFECT', data.data)
         var calories = [];
         data.data.map(entry => {
           var date = entry.date.slice(0, 10);

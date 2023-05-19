@@ -1,5 +1,5 @@
 button {
-  background-color: #157F1F; /* Green */
+  background-color: #157F1F;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -16,10 +16,6 @@ body {
 div {
   background-color: #1D263B;
   color: #A0EADE;
-}
-
-h1 {
-  color: #4CB963;
 }
 
 input {

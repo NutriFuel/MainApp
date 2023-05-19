@@ -29,7 +29,7 @@ const StyleSample = ({ }) => {
     palette: {
       primary: {
         light: "#4CB963",
-        main: "#157F1F",
+        main: '#157F1F',
         dark: "#1D263B",
         contrastText: "#5C67B4"
       }
