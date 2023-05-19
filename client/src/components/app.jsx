@@ -24,8 +24,22 @@ import Signup from './login&signup/signup/Signup.jsx';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './firebase-config.js'
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
 const App = () => {
   const navigate = useNavigate();
+  const theme = createTheme({
+    palette: {
+      primary: {
+        light: "#4CB963",
+        main: '#157F1F',
+        dark: "#1D263B",
+        contrastText: "#5C67B4"
+      }
+    },
+  });
 
   const userInfo = useRef({
     uid: null,
@@ -140,13 +154,13 @@ const App = () => {
 
     return (
       <div>
-        <h1>Welcome to the Nutrifuel!</h1>
+        <Typography variant='h1'>Welcome to the Nutrifuel!</Typography>
         {/* <div><button onClick={goToExercisePage}>Exercise</button></div>
         <div><button onClick={goToNutritionPage}>Nutrition</button></div>
         <div><button onClick={goToProgressPage}>Progress</button></div>
         <div><button onClick={goToUserProfilePage}>User Profile</button></div>
         <div><button onClick={goToChatPage}>Friends/Chat</button></div> */}
-        <div><button onClick={() => { userInfo.current = { uid: null, email: null }; signOut(auth) }}>Sign out</button></div>
+        <div><Button variant='outlined' onClick={() => { userInfo.current = { uid: null, email: null }; signOut(auth) }}>Sign out</Button></div>
         <Navigation auth={auth} signOut={signOut} />
 
       </div>
